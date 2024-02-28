@@ -27,17 +27,24 @@ def setup_word_categories():
     word_categories = []
 
     basketball_category = {
-     'category_name': 'Basketball',
+     'category_name': 'basketball',
      'words': ['basket','court','team','endline']
      }
+    
+    games_category = {
+        'category_name': 'games',
+        'words': ['doom','halo','dishonered','COD']
+    }
 
     word_categories.append(basketball_category)
-
+    word_categories.append(games_category)
+    print_words(word_categories)
     return word_categories
+
+setup_word_categories()
     
-print_words(setup_word_categories)
-    
-#test
+
+
 
 
     
