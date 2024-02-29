@@ -18,32 +18,73 @@
 
 #Allow starting game once current one has concluded.
 
-def print_words(word_categories):
+
+Grid = [
+    ["Word","Word","Word","Word"],
+    ["Word","Word","Word","Word"],
+    ["Word","Word","Word","Word"],
+    ["Word","Word","Word","Word"],
+]
+#this is the empty grid that will be populated with my words
+
+def print_words(word_categories): #was using this to test my category dictionaries were working
     for category in word_categories:
         for word in category['words']:
             print(word)
 
-def setup_word_categories():
+def setup_word_categories(): #this function is where I store all my categories
+    global word_categories
     word_categories = []
 
     basketball_category = {
-     'category_name': 'basketball',
-     'words': ['basket','court','team','endline']
+     'category name': 'Basketball',
+     'words': ['Basket','Court','Team','Endline']
      }
     
     games_category = {
-        'category_name': 'games',
-        'words': ['doom','halo','dishonered','COD']
+        'category name': 'Games',
+        'words': ['Doom','Halo','Dishonered','CoD']
     }
 
+    colours_category = {
+        'category name': 'Colours',
+        'words:': ['Salmon','Apricot','Puke','Tan']
+    }
+
+    elements_category = {
+        'category name': 'Elements',
+        'words': ['Neon','Tin','Mercury','Manganese']
+    }
+
+    currency_category = {
+        'category name': 'American Currency Slang',
+        'words': ['Benjamin','Bucks','Moola','Bread']
+    }
+
+    coding_category = {
+        'category name': ''
+    }
+
+    
+    word_categories.append(colours_category)
     word_categories.append(basketball_category)
     word_categories.append(games_category)
-    print_words(word_categories)
-    return word_categories
+    word_categories.append(elements_category)
+    word_categories.append(currency_category)
+    word_categories.append(coding_category)
 
-setup_word_categories()
+def select_categories(): #working on this, will return randomly selected categories to be used for populating the grid the player views
+    return chosen_categories
+
     
+def populate_grid(word_categories): #working on this, will populate grid with randomly selected categories
+row = 0
 
+
+def get_guess(): # Gets guess imput from player and returns value entered
+
+    guess = input("Please enter 4 words you think fit under the same category...")
+    return guess
 
 
 
