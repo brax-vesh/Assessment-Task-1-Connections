@@ -21,7 +21,7 @@ def setup_word_categories(): # where i generate the word list for the game
 
     elements_category = {
         'category name': 'Elements',
-        'words': ['Neon','Tin','Mercury','Manganese']
+        'words': ['Neon','Tin','Mercury','Aluminium']
     }
 
     currency_category = {
@@ -46,20 +46,22 @@ def setup_word_categories(): # where i generate the word list for the game
     word_categories.append(currency_category)
     word_categories.append(coding_category)
     word_categories.append(weapons_category)
+    
+    selected_categories = random.sample(word_categories, 4) # Randomly select 4 categories without duplicates
 
-    selected_categories = random.sample(word_categories, 4) # randomly selects the categories without having dupes
-    game_categories = [] # create an empty list to store category names
-    for category in selected_categories:
-        game_categories.append(category['category name']) # append the 'category name' to the list
+    # Separate variables for each selected category
+    category1, category2, category3, category4 = selected_categories
+
     wordlist = []
     for category in selected_categories:
         for word in category['words']:
-            wordlist.append(word) # adds selected words to wordlist
-            random.shuffle(wordlist) # shuffles the words in the wordlist
-    return wordlist, game_categories # Return both wordlist and game_categories
+            wordlist.append(word)
+            random.shuffle(wordlist)
+    
+    return wordlist, category1, category2, category3, category4
 
 def populate_grid():
-    wordlist, game_categories = setup_word_categories() # calls the wordlist variable into this function
+    wordlist, category1, category2, category3, category4 = setup_word_categories() # calls the wordlist variable into this function
     num = 0
     Grid = [
         ["Word", "Word", "Word", "Word"],
@@ -73,17 +75,51 @@ def populate_grid():
             num += 1
             if num >= len(wordlist):
                 break
-    return Grid, game_categories # Return both Grid and game_categories
+    return Grid, category1, category2, category3, category4 # Return both Grid and game_categories
 
-grid, game_categories = populate_grid() # Receive both Grid and game_categories
+def get_player_guess():
+    guesses = []
+    for i in range(4):
+        guess = input("type a word...")
+        guesses.append(guess)
+    return guesses
+
+def check_guess():
+    guesses = get_player_guess()
+    _, category1, category2, category3, category4 = populate_grid()
+    words1 = [word.lower() for word in category1['words']]
+    words2 = [word.lower() for word in category2['words']]
+    words3 = [word.lower() for word in category3['words']]
+    words4 = [word.lower() for word in category4['words']]
+
+    low_guess = [guess.lower() for guess in guesses]
+
+    if all(word in words1 for word in low_guess):
+        return True
+    elif all(word in words2 for word in low_guess):
+        return True
+    elif all(word in words3 for word in low_guess):
+        return True
+    elif all(word in words4 for word in low_guess):
+        return True
+    
+    return False
+        
+
+
+def action():
+    correct = check_guess()
+    if correct == True:
+        print('right')
+    else:
+        print('wrong')
+
+grid, category1, category2, category3, category4  = populate_grid()
+
 for row in grid:
     print(row)
 
-print("Selected categories:", game_categories)
+action()
 
-def get_player_guess():
-    input("Pick 4 words from the grid you think relate to eachother in this format... [word, word, word, word]...",)
-    player_guess = input
-    return player_guess
 
-get_player_guess()
+
