@@ -1,4 +1,3 @@
-
 import random
 
 
@@ -9,6 +8,36 @@ def display_grid(grid, correct_guesses): # just displays the grid in a nice form
 
 def setup_word_categories(): # where i generate the word list for the game
     word_categories = []
+
+    cartoon_network_shows_category = {
+        'category name': 'Cartoon Network Shows',
+        'words': ['Regular Show', 'Adventure Time','Samurai Jack','Gumball']         
+    }    
+
+    run_synonyms_category = {
+        'category name': 'Run Synonyms',
+        'words': ['Dash', 'Rush','Charge','Hurtle']         
+    }
+
+    run_synonyms_category = {
+        'category name': 'Run Synonyms',
+        'words': ['Dash', 'Rush','Charge','Hurtle']         
+    }
+
+    cars_movie_category = {
+        'category name': 'Cars Movie Characters',
+        'words': ['Lightning', 'Chick','Doc','King']       
+    }
+
+    mr_fong_category = {
+        'category name': 'Mr Fong',
+        'words': ['Brilliant', 'Intelligent','Genius','Swaggy']
+    }
+
+    avatar_anime_elements_category = {
+        'category name': 'Avatar Anime Elements',
+        'words': ['Earth','Air','Fire','Water']
+    }
 
     basketball_category = {
         'category name': 'Basketball',
@@ -45,8 +74,11 @@ def setup_word_categories(): # where i generate the word list for the game
         'words': ['Hunga Munga', 'Mancatcher', 'Morning Star', 'Sling']
     }
 
-
-
+    word_categories.append(cartoon_network_shows_category)
+    word_categories.append(run_synonyms_category)
+    word_categories.append(cars_movie_category)
+    word_categories.append(mr_fong_category)
+    word_categories.append(avatar_anime_elements_category)
     word_categories.append(colours_category)
     word_categories.append(basketball_category)
     word_categories.append(games_category)
@@ -282,3 +314,24 @@ def playgame():
         answer = play_again_prompt()
 
 playgame()
+
+#update
+
+    
+
+
+
+        
+        # update the grid to remove the guessed answers if required
+
+
+# you know that you have poppped / removed a category from the selected _categories list
+# this impacts the line 174 because when guess runs again, it wants 4 categories again. 
+# 
+
+
+
+
+
+
+
