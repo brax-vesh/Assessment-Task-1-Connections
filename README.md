@@ -10,7 +10,7 @@
  
  You have four lives and need to find 4 categories to win. GOOD LUCK!
 
- ##Installation:
+ ## Installation:
 
  1. Clone the repository: https://github.com/brax-vesh/Assessment-Task-1-Connections
  2. Navigate to the cloned repository
