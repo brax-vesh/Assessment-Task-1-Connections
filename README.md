@@ -12,6 +12,6 @@
 
  ## Installation:
 
- 1. Clone the repository: https://github.com/brax-vesh/Assessment-Task-1-Connections
+ 1. Clone the repository: [https://github.com/brax-vesh/Assessment-Task-1-Connections](https://github.com/brax-vesh/Assessment-Task-1-Connections/releases/tag/pythonnections)
  2. Navigate to the cloned repository
  3. Run the game: Pythonnections!
